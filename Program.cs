@@ -12,6 +12,7 @@ namespace ServerApplication
         {
             threadConsole = new Thread(new ThreadStart(consoleThread));
             threadConsole.Start();
+            Network.instance.ServerStart();
         }
 
         private static void consoleThread()

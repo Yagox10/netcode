@@ -19,7 +19,8 @@ namespace ServerApplication
 
             ServerSocket = new TcpListener(IPAddress.Any, 5500);
             ServerSocket.Start();
-            ServerSocket.BeginAcceptTcpClient();
+            ServerSocket.BeginAcceptTcpClient(OnClientConnect, null);
+            Console.WriteLine("Server has successfully started.");
         }
 
         void OnClientConnect(IAsyncResult result)
